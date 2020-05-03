@@ -1,0 +1,17 @@
+data:
+  text:
+    train: data/raw/mex20_train.txt
+    val: data/raw/mex20_val.txt
+    test: data/raw/mex20_test_full.txt
+  label:
+    train: data/raw/mex20_train_labels.txt
+    val: data/raw/mex20_val_labels.txt
+
+processed_data:
+  text:
+    train: data/processed/train_text.txt
+    val: data/processed/val_text.txt
+    test: data/processed/test_text.txt
+  label:
+    train: data/processed/train_label.txt
+    val: data/processed/val_label.txt

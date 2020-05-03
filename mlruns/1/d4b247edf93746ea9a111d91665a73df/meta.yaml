@@ -1,0 +1,15 @@
+artifact_uri: file:///home/khuyentran/Desktop/NLP/aggresive/mlruns/1/d4b247edf93746ea9a111d91665a73df/artifacts
+end_time: 1588094280620
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: d4b247edf93746ea9a111d91665a73df
+run_uuid: d4b247edf93746ea9a111d91665a73df
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1588094217743
+status: 3
+tags: []
+user_id: khuyentran

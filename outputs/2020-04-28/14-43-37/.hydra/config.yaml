@@ -1,0 +1,24 @@
+mlflow:
+  experiment_name: agressive
+model:
+  grid_search: GridSearchCV
+param_grid:
+  kbest__k:
+  - 1000
+  svr__C:
+  - 1
+  tfidf__analyzer:
+  - char
+  tfidf__binary:
+  - true
+  tfidf__ngram_range:
+  - - 3
+    - 7
+processed_data:
+  label:
+    train: data/processed/train_label.txt
+    val: data/processed/val_label.txt
+  text:
+    test: data/processed/test_text.txt
+    train: data/processed/train_text.txt
+    val: data/processed/val_text.txt

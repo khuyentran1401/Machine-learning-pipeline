@@ -1,0 +1,1 @@
+{'kbest__k': 4000, 'svr__C': 4, 'tfidf__analyzer': 'char', 'tfidf__binary': True, 'tfidf__ngram_range': (3, 7)}

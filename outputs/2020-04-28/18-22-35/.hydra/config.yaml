@@ -1,0 +1,52 @@
+mlflow:
+  experiment_name: agressive
+model:
+  grid_search: GridSearchCV
+param_grid:
+  kbest__k:
+  - 1000
+  - 2000
+  - 4000
+  - 6000
+  svr__C:
+  - 0.05
+  - 0.12
+  - 0.25
+  - 0.5
+  - 1
+  - 2
+  - 4
+  tfidf__analyzer:
+  - word
+  - char
+  tfidf__binary:
+  - true
+  - false
+  tfidf_char__ngram_range:
+  - - 3
+    - 7
+  - - 4
+    - 4
+  - - 5
+    - 5
+  - - 6
+    - 6
+  - - 7
+    - 7
+  - - 3
+    - 5
+  tfidf_word__ngram_range:
+  - - 1
+    - 3
+  - - 2
+    - 2
+  - - 3
+    - 3
+processed_data:
+  label:
+    train: data/processed/train_label.txt
+    val: data/processed/val_label.txt
+  text:
+    test: data/processed/test_text.txt
+    train: data/processed/train_text.txt
+    val: data/processed/val_text.txt
