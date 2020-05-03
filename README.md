@@ -1,5 +1,5 @@
 # Machine learning pipeline
-This repo provides an example of how to incorporate MLflow and Hydra in your machine learning project for reproducibility. This example is pulled from my project on predicting aggressive tweets.
+This repo provides an example of how to incorporate MLflow and Hydra in your machine learning project for reproducibility. This example is pulled from my project on predicting aggressive tweets. Find the article for this repo [here](https://towardsdatascience.com/achieve-reproducibility-in-machine-learning-with-these-two-tools-7bb20609cbb8?source=friends_link&sk=8e1e186294f46df97e0325ce9790f2d7)
 
 # Hydra
 With [Hydra](https://hydra.cc/), you can compose your configuration dynamically, enabling you to easily get the perfect configuration for each run. To install Hydra, simply run
