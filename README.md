@@ -28,3 +28,14 @@ mlflow.set_tracking_uri('file://' + utils.get_original_cwd() + '/mlruns')
 * train.py: file for training
 * predict.py: file for prediction
 
+# How to run this file
+To run the experiments and see how these experiments are displayed on MLflow's server, clone this repo and run
+```
+python train.py
+```
+Once the run is completed, you can access to MLflow's server with
+```
+mlflow ui
+```
+Access http://localhost:5000/ from the same directory that you run the file, you should be able to see your experiment like this
+![image](https://github.com/khuyentran1401/Machine-learning-pipeline/blob/master/Screenshot%20from%202020-05-03%2016-41-21.png)
