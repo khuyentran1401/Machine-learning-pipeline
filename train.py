@@ -25,19 +25,20 @@ import warnings
 import hydra
 from hydra import utils
 
-from train_pipeline import tfidf_kbest, tfidf_pipeline
+from train_pipeline import pipeline
 
 from sklearn.model_selection import GridSearchCV
 import os
 
 def read_file(name):
 
-    with open(utils.to_absolute_path(name), 'rb') as fp:
-    	f = pickle.load(fp)
+	with open(utils.to_absolute_path(name), 'rb') as fp:
+		f = pickle.load(fp)
 
-    return f
+	return f
 
-@hydra.main(config_path='experiments/hyperparameters.yaml')
+@hydra.main(config_path='experiments',
+			config_name='hyperparameters')
 def main(config):
 	warnings.filterwarnings("ignore")
 	np.random.seed(40)
@@ -50,29 +51,20 @@ def main(config):
 	mlflow.set_tracking_uri('file://' + utils.get_original_cwd() + '/mlruns')
 	mlflow.set_experiment(config.mlflow.experiment_name)
 
+	tfidf_pipeline = pipeline(config)
 
 	with mlflow.start_run():
 
-		
-		param_grid = dict(
-			kbest__k = [4000], 
-			svr__C = [1],
-			#tfidf__analyzer = ['word','char'],
-			word_char__tfidf_word__ngram_range = [(1, 3)],
-			word_char__tfidf_char__ngram_range = [(3, 7)],
-			
-			word_char__tfidf_word__binary = [True],
-			word_char__tfidf_char__binary = [True],
+		param_grid = dict(config.hyperparameters)
 
-			)					
-		
-		
-		#param_grid = {ele: (list(config.param_grid[ele])) for ele in config.param_grid}
-		
-		
-		grid_search = eval(config.model.grid_search)(tfidf_pipeline, param_grid=param_grid, scoring="f1_macro", cv=5, n_jobs=4)
+		for key, value in param_grid.items():
+			if isinstance(value, str):
+				param_grid[key] = eval(param_grid[key])
 
+		param_grid = {ele: (list(param_grid[ele])) for ele in param_grid}			
 		
+		grid_search = GridSearchCV(tfidf_pipeline, param_grid=param_grid, scoring=config.GridSearchCV.scoring, cv=config.GridSearchCV.cv, n_jobs=config.GridSearchCV.n_jobs)
+
 		grid_search.fit(X_train, y_train)
 
 		labels_pred = grid_search.predict(X_test)

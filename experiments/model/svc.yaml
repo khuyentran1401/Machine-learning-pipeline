@@ -1,0 +1,8 @@
+model: SVC
+
+hyperparameters:
+  classifier__C: [.05, .12]
+  classifier__kernel: ['linear', 'poly']
+  classifier__gamma: [0.1, 1]
+  classifier__degree: [0, 1, 2]
+ 

@@ -6,18 +6,23 @@ processed_data:
   label:
     train: data/processed/train_label.txt
     val: data/processed/val_label.txt
-
 mlflow:
   experiment_name: agressive
-
-defaults:
-  - model: svc
-
 GridSearchCV:
   scoring: f1_macro
   cv: 5
   n_jobs: 4
-
 metrics:
   score: metrics.f1_score
   average: macro
+model: RandomForestClassifier
+hyperparameters:
+  classifier__n_estimators: '[int(x) for x in np.linspace(start = 200, stop = 2000,
+    num = 10)]'
+  classifier__max_features:
+  - auto
+  - sqrt
+  classifier__max_depth: '[int(x) for x in np.linspace(10, 110, num = 11)]'
+  classifier__bootstrap:
+  - true
+  - false
