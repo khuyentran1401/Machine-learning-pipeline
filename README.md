@@ -1,7 +1,7 @@
 # Machine learning pipeline
 This repo provides an example of how to incorporate popular machine learning tools such as DVC, MLflow, and Hydra in your machine learning project. I use my project on predicting aggressive tweets as an example. 
 
-Find the article on how to use MlFlow and Hydra [here](https://towardsdatascience.com/achieve-reproducibility-in-machine-learning-with-these-two-tools-7bb20609cbb8?source=friends_link&sk=8e1e186294f46df97e0325ce9790f2d7)
+Find the article on how to use MLflow and Hydra [here](https://towardsdatascience.com/achieve-reproducibility-in-machine-learning-with-these-two-tools-7bb20609cbb8?source=friends_link&sk=8e1e186294f46df97e0325ce9790f2d7)
 
 Find the article on how to use DVC [here](https://towardsdatascience.com/introduction-to-dvc-data-version-control-tool-for-machine-learning-projects-7cb49c229fe0)
 
