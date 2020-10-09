@@ -41,12 +41,7 @@ mlflow.set_tracking_uri('file://' + utils.get_original_cwd() + '/mlruns')
 
 # How to pull the data with DVC
 
-Add remote storage
-```bash
-dvc remote add -d remote gdrive://1ynNBbT-4J0ida0eKYQqZZbC93juUUbVH
-```
-
-Pull the data from remote storage
+Pull the data from Google Drive
 ```bash
 dvc pull 
 ```
