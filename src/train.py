@@ -32,7 +32,7 @@ def read_file(name):
 
 	return f
 
-@hydra.main(config_path='configs',
+@hydra.main(config_path='../configs',
 			config_name='hyperparameters')
 def main(config):
 	warnings.filterwarnings("ignore")

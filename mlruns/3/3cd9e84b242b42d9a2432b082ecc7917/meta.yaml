@@ -1,0 +1,15 @@
+artifact_uri: file:///home/khuyentran/Machine-learning-pipeline/mlruns/3/3cd9e84b242b42d9a2432b082ecc7917/artifacts
+end_time: 1602256168649
+entry_point_name: ''
+experiment_id: '3'
+lifecycle_stage: active
+name: ''
+run_id: 3cd9e84b242b42d9a2432b082ecc7917
+run_uuid: 3cd9e84b242b42d9a2432b082ecc7917
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1602256149919
+status: 4
+tags: []
+user_id: khuyentran

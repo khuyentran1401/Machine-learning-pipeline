@@ -13,6 +13,7 @@ pip install mlflow
 ```
 
 # Structure's explanation
+* **src**: file for source code
 * **mlruns**: file for mlflow runs
 * **configs**: to keep config files
 * **outputs**: results from the runs of Hydra. Each time you run your function nested inside Hydra's decoration, the output will be saved here. If you want to change the directory in mlflow folder, use
@@ -31,7 +32,7 @@ mlflow.set_tracking_uri('file://' + utils.get_original_cwd() + '/mlruns')
 # How to run this file
 To run the configs and see how these experiments are displayed on MLflow's server, clone this repo and run
 ```
-python train.py
+python src/train.py
 ```
 Once the run is completed, you can access to MLflow's server with
 ```

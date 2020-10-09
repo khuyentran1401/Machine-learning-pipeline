@@ -1,0 +1,4 @@
+artifact_location: file:///home/khuyentran/Machine-learning-pipeline/mlruns/3
+experiment_id: '3'
+lifecycle_stage: active
+name: agressive
