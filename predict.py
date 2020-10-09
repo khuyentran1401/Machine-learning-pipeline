@@ -20,7 +20,7 @@ def read_file(name):
 
     return f
 
-@hydra.main(config_path='experiments/hyperparameters.yaml')
+@hydra.main(config_path='configs/hyperparameters.yaml')
 def predict(config):
 	warnings.filterwarnings("ignore")
 	np.random.seed(40)

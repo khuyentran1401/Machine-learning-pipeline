@@ -78,7 +78,7 @@ def normalize(doc):
         
     return doc
 
-@hydra.main(config_path='experiments/data_preprocess.yaml')
+@hydra.main(config_path='configs/data_preprocess.yaml')
 def main(config):
     train_text = read_file(config.data.text.train)
     val_text = read_file(config.data.text.val)

@@ -1,9 +1,0 @@
-[2020-04-27 19:43:47,618][root][WARNING] - Malformed experiment 'experiments'. Detailed error Yaml file '/home/khuyentran/Desktop/NLP/aggresive/experiments/meta.yaml' does not exist.
-Traceback (most recent call last):
-  File "/home/khuyentran/anaconda3/lib/python3.7/site-packages/mlflow/store/tracking/file_store.py", line 197, in list_experiments
-    experiment = self._get_experiment(exp_id, view_type)
-  File "/home/khuyentran/anaconda3/lib/python3.7/site-packages/mlflow/store/tracking/file_store.py", line 256, in _get_experiment
-    meta = read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
-  File "/home/khuyentran/anaconda3/lib/python3.7/site-packages/mlflow/utils/file_utils.py", line 160, in read_yaml
-    raise MissingConfigException("Yaml file '%s' does not exist." % file_path)
-mlflow.exceptions.MissingConfigException: Yaml file '/home/khuyentran/Desktop/NLP/aggresive/experiments/meta.yaml' does not exist.

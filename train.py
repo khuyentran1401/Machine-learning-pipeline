@@ -11,11 +11,6 @@ from sklearn.model_selection import GridSearchCV
 
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.pipeline import Pipeline
-
-from sklearn.feature_selection import SelectKBest, chi2
-import scipy
-
 
 import mlflow
 import mlflow.sklearn
@@ -37,7 +32,7 @@ def read_file(name):
 
 	return f
 
-@hydra.main(config_path='experiments',
+@hydra.main(config_path='configs',
 			config_name='hyperparameters')
 def main(config):
 	warnings.filterwarnings("ignore")
@@ -73,7 +68,7 @@ def main(config):
 		print(metrics.f1_score(y_test, labels_pred, average='macro'))
 
 		mlflow.log_params(grid_search.best_params_)
-		mlflow.log_artifacts(utils.to_absolute_path("experiments"))
+		mlflow.log_artifacts(utils.to_absolute_path("configs"))
 		mlflow.log_metric('f1_macro', eval(config.metrics.score)(y_test, labels_pred, average = config.metrics.average))
 
 		mlflow.sklearn.log_model(grid_search, 'kbest')
