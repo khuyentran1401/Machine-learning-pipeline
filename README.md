@@ -1,14 +1,20 @@
 # Machine learning pipeline
-This repo provides an example of how to incorporate MLflow and Hydra in your machine learning project for reproducibility. This example is pulled from my project on predicting aggressive tweets. Find the article for this repo [here](https://towardsdatascience.com/achieve-reproducibility-in-machine-learning-with-these-two-tools-7bb20609cbb8?source=friends_link&sk=8e1e186294f46df97e0325ce9790f2d7)
+This repo provides an example of how to incorporate popular machine learning tools such as DVC, MLflow, and Hydra in your machine learning project. I use my project on predicting aggressive tweets as an example. Find the article for this repo [here](https://towardsdatascience.com/achieve-reproducibility-in-machine-learning-with-these-two-tools-7bb20609cbb8?source=friends_link&sk=8e1e186294f46df97e0325ce9790f2d7)
+
+# DVC
+[DVC](https://dvc.org/doc/start) is a data version control tool. To install DVC, run
+```bash
+pip install dvc
+```
 
 # Hydra
-With [Hydra](https://hydra.cc/), you can compose your configuration dynamically, enabling you to easily get the perfect configuration for each run. To install Hydra, simply run
-```
+With [Hydra](https://hydra.cc/), you can compose your configuration dynamically. To install Hydra, simply run
+```bash
 pip install hydra-core --upgrade
 ```
 # MLflow
-[MLflow](https://mlflow.org/) is an open-source platform to manage the ML lifecycle, including experimentation, reproducibility, and deployment. Install MLflow with 
-```
+[MLflow](https://mlflow.org/) is a platform to manage the ML lifecycle, including experimentation, reproducibility, and deployment. Install MLflow with 
+```bash
 pip install mlflow
 ```
 
@@ -24,10 +30,22 @@ from hydra import utils
 
 mlflow.set_tracking_uri('file://' + utils.get_original_cwd() + '/mlruns')
 ```
-* preprocessing.py: file for preprocessing
-* train_pipeline.py: training's pipeline
-* train.py: file for training and saving model
-* predict.py: file for prediction and loading model
+* `src/preprocessing.py`: file for preprocessing
+* `src/train_pipeline.py`: training's pipeline
+* `src/train.py`: file for training and saving model
+* `src/predict.py`: file for prediction and loading model
+
+# How to pull the data with DVC
+
+Add remote storage
+```bash
+dvc remote add -d remote gdrive://1ynNBbT-4J0ida0eKYQqZZbC93juUUbVH
+```
+
+Pull the data from remote storage
+```bash
+dvc pull 
+```
 
 # How to run this file
 To run the configs and see how these experiments are displayed on MLflow's server, clone this repo and run
