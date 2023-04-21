@@ -8,7 +8,8 @@ Find the article on how to use DVC [here](https://towardsdatascience.com/introdu
 # DVC
 [DVC](https://dvc.org/doc/start) is a data version control tool. To install DVC, run
 ```bash
-pip install dvc
+# since we need gdrive
+pip install dvc[gdrive]
 ```
 
 # Hydra
