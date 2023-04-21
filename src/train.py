@@ -50,7 +50,7 @@ def main(config):
 
 	with mlflow.start_run():
 
-		param_grid = dict(config.hyperparameters)
+		param_grid = dict(config['model']['hyperparameters']) # change made here
 
 		for key, value in param_grid.items():
 			if isinstance(value, str):
