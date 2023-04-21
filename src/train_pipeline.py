@@ -22,7 +22,7 @@ def pipeline(config):
 		[
 			('word_char', tfidf_word_char),
 			('kbest', SelectKBest(chi2, k = 2000)),
-			('classifier', eval(config.model)())
+			('classifier', eval(config.model['model'])()) # update made here for this to work
 		]
 	)
 
